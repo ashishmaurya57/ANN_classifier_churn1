@@ -1,9 +1,9 @@
 
-tensorflow==2.15.0
+tensorflow==2.18.0
 keras
 pandas
 numpy
 scikit-learn
 tensorboard
 matplotlib
-streamlit==1.25.0
+streamlit

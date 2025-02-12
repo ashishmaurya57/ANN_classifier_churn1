@@ -5,9 +5,14 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler, OneHotEncoder
 import pandas as pd
 import pickle
 from tensorflow.keras.models import load_model
+from tensorflow.keras.losses import BinaryCrossentropy
 
 ## load the train model
-model=load_model('model.h5')
+model=load_model('model_new.h5', compile=False)
+
+model.compile(optimizer='adam', 
+              loss=BinaryCrossentropy(from_logits=False),
+              metrics=['accuracy'])
 
 ## load th encoders and scaler
 with open('label_encoder_gender.pkl','rb') as file:
